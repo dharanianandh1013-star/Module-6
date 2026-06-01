@@ -1,75 +1,50 @@
-# 🐍 Python OOP: Abstract Class & Method Example
+# 🐍 Python OOP: Encapsulation with Private Members
 
 ## 🎯 AIM
 
-To create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle`.
+To implement **Encapsulation** in Python by defining a class `Rectangle` with **private member variables** `__length` and `__breadth`.
 
 ---
 
 ## 🧠 ALGORITHM
 
-1. **Import ABC module**:
-   - Use `from abc import ABC, abstractmethod` to define abstract classes and methods.
+1. **Define the Class**:
+   - Create a class `Rectangle` with two private attributes: `__length` and `__breadth`.
 
-2. **Create Abstract Class `Shape`**:
-   - Define an abstract method `calculate_area()` with `@abstractmethod`.
+2. **Initialize Variables**:
+   - Use the `__init__()` constructor to set initial values for `__length` and `__breadth`.
 
-3. **Create Subclass `Rectangle`**:
-   - Set default values for `length` and `breadth`.
-   - Override `calculate_area()` to compute the rectangle area.
+3. **Print Values**:
+   - Display the private variables from within the class to demonstrate access.
 
-4. **Create Subclass `Circle`**:
-   - Set default value for `radius`.
-   - Override `calculate_area()` to compute the circle area.
-
-5. **Create Objects & Call Methods**:
-   - Instantiate `Rectangle` and `Circle`.
-   - Call their `calculate_area()` methods.
+4. **Instantiate the Object**:
+   - Create an object of the `Rectangle` class to trigger the constructor.
 
 ---
 
 ## 💻 Program
 ```
-from abc import ABC, abstractmethod
+class Rectangle:
+    def __init__(self, length, breadth):
+        self.__length = length      # private variable
+        self.__breadth = breadth   # private variable
 
-# Abstract class
-class Shape(ABC):
-    
-    @abstractmethod
-    def calculate_area(self):
-        pass
+    def display(self):
+        print("Length:", self.__length)
+        print("Breadth:", self.__breadth)
 
+# Creating object
+r1 = Rectangle(10, 5)
 
-# Rectangle class
-class Rectangle(Shape):
-    def __init__(self, length=5, breadth=3):
-        self.length = length
-        self.breadth = breadth
-
-    def calculate_area(self):
-        return self.length * self.breadth
-
-
-# Circle class
-class Circle(Shape):
-    def __init__(self, radius=4):
-        self.radius = radius
-
-    def calculate_area(self):
-        return 3.14 * self.radius * self.radius
-
-
-# Create objects
-r = Rectangle()
-c = Circle()
-
-# Display results
-print("Rectangle Area:", r.calculate_area())
-print("Circle Area:", c.calculate_area())
+# Accessing values using method
+r1.display()
 ```
+
 ## Output
-<img width="568" height="356" alt="image" src="https://github.com/user-attachments/assets/7581f678-fb66-403f-81cc-cc405b27a0a2" />
+<img width="592" height="327" alt="image" src="https://github.com/user-attachments/assets/ec0b66da-6294-48ca-ad65-5bf19379aef3" />
 
 
 ## Result
-The program was executed successfully. An abstract class with an abstract method was created and implemented in subclasses to calculate the area of different shapes
+Thus, the program to demonstrate Encapsulation using private variables in Python is successfully executed.
+
+
